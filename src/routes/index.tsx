@@ -17,12 +17,12 @@ import {
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
-import massoterapiaAsset from "@/assets/massoterapia-beneficios.jpeg.asset.json";
-import otavioAsset from "@/assets/otavio-marques.jpeg.asset.json";
-import recoveryAsset from "@/assets/recovery-compressao.jpeg.asset.json";
-import ventosaAsset from "@/assets/ventosaterapia-beneficios.jpeg.asset.json";
-
 const logoAsset = "/logo.jpeg";
+const otavioAsset = "/otavio-marques.jpeg";
+const massoterapiaAsset = "/massoterapia-beneficios.jpeg";
+const ventosaAsset = "/ventosaterapia-beneficios.jpeg";
+const recoveryAsset = "/recovery-compressao.jpeg";
+
 const whatsappUrl = "https://wa.me/5515988229300?text=Ol%C3%A1!%20Gostaria%20de%20marcar%20minha%20Sess%C3%A3o";
 
 export const Route = createFileRoute("/")({
@@ -93,9 +93,9 @@ const benefits = [
 ] as const;
 
 const gallery = [
-  { src: massoterapiaAsset.url, alt: "Otávio Marques realizando técnica de massoterapia", label: "Massoterapia" },
-  { src: ventosaAsset.url, alt: "Sessão de ventosaterapia", label: "Ventosaterapia" },
-  { src: recoveryAsset.url, alt: "Sessão com botas de compressão pneumática", label: "Recovery esportivo" },
+  { src: massoterapiaAsset, alt: "Otávio Marques realizando técnica de massoterapia", label: "Massoterapia" },
+  { src: ventosaAsset, alt: "Sessão de ventosaterapia", label: "Ventosaterapia" },
+  { src: recoveryAsset, alt: "Sessão com botas de compressão pneumática", label: "Recovery esportivo" },
 ];
 
 function CTA({ children, light = false }: { children: ReactNode; light?: boolean }) {
@@ -160,7 +160,7 @@ function Index() {
             <CTA>Agende seu atendimento</CTA>
           </div>
           <div className="hero-media">
-            <img src={otavioAsset.url} alt="Fisioterapeuta e massoterapeuta Otávio Marques" className="hero-image" />
+            <img src={otavioAsset} alt="Fisioterapeuta e massoterapeuta Otávio Marques" className="hero-image" />
           </div>
         </div>
         <a href="#sobre" className="scroll-cue" aria-label="Ir para a próxima seção"><span>CONHEÇA</span><ArrowDown size={18} /></a>
@@ -215,7 +215,7 @@ function Index() {
 
       <section id="galeria" className="section gallery-section">
         <div className="section-inner">
-          <div className="section-heading gallery-heading"><div><p className="eyebrow light"><span /> EXPERIÊNCIA</p><h2>Cuidado em cada <em>detalhe.</em></h2></div><p>Técnicas e recursos aplicados em um ambiente preparado para sua recuperação.</p></div>
+          <div className="section-heading gallery-heading"><div><p className="eyebrow light"><span /> EXPERIÊNCIA</p><h2>Cuidado em cada <em>detalhe.</em></h2></div><p>Técnicas e recursos applied em um ambiente preparado para sua recuperação.</p></div>
           <div className="gallery-grid">
             {gallery.map((item, index) => <figure key={item.label} className={`gallery-item gallery-${index + 1}`}><img src={item.src} alt={item.alt} /><figcaption><span>0{index + 1}</span>{item.label}</figcaption></figure>)}
           </div>
