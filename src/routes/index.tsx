@@ -17,13 +17,6 @@ import {
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
-// Como as fotos estão dentro da pasta public, o caminho é direto a partir da raiz /
-const logoAsset = "/logo.jpeg";
-const otavioAsset = "/otavio-marques.jpeg";
-const massoterapiaAsset = "/massoterapia-beneficios.jpeg";
-const ventosaAsset = "/ventosaterapia-beneficios.jpeg";
-const recoveryAsset = "/recovery-compressao.jpeg";
-
 const whatsappUrl = "https://wa.me/5515988229300?text=Ol%C3%A1!%20Gostaria%20de%20marcar%20minha%20Sess%C3%A3o";
 
 export const Route = createFileRoute("/")({
@@ -32,16 +25,8 @@ export const Route = createFileRoute("/")({
       { title: "Otávio Marques | Fisioterapia e Massoterapia" },
       {
         name: "description",
-        content:
-          "Atendimento personalizado em fisioterapia, massoterapia e recovery esportivo com Otávio Marques.",
+        content: "Atendimento personalizado em fisioterapia, massoterapia e recovery esportivo com Otávio Marques.",
       },
-      { property: "og:title", content: "Otávio Marques | Fisioterapia e Massoterapia" },
-      {
-        property: "og:description",
-        content: "Cuidado individualizado para saúde, recuperação e performance.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -50,7 +35,7 @@ export const Route = createFileRoute("/")({
 function BrandMark({ className = "" }: { className?: string }) {
   return (
     <img
-      src={logoAsset}
+      src="/logo.jpeg"
       alt="Thera Recovery Logo"
       className={`h-8 w-8 object-contain rounded ${className}`}
     />
@@ -94,9 +79,9 @@ const benefits = [
 ] as const;
 
 const gallery = [
-  { src: massoterapiaAsset, alt: "Otávio Marques realizando técnica de massoterapia", label: "Massoterapia" },
-  { src: ventosaAsset, alt: "Sessão de ventosaterapia", label: "Ventosaterapia" },
-  { src: recoveryAsset, alt: "Sessão com botas de compressão pneumática", label: "Recovery esportivo" },
+  { src: "/massoterapia-beneficios.jpeg", alt: "Otávio Marques realizando técnica de massoterapia", label: "Massoterapia" },
+  { src: "/ventosaterapia-beneficios.jpeg", alt: "Sessão de ventosaterapia", label: "Ventosaterapia" },
+  { src: "/recovery-compressao.jpeg", alt: "Sessão com botas de compressão pneumática", label: "Recovery esportivo" },
 ];
 
 function CTA({ children, light = false }: { children: ReactNode; light?: boolean }) {
@@ -161,7 +146,7 @@ function Index() {
             <CTA>Agende seu atendimento</CTA>
           </div>
           <div className="hero-media">
-            <img src={otavioAsset} alt="Fisioterapeuta e massoterapeuta Otávio Marques" className="hero-image" />
+            <img src="/otavio-marques.jpeg" alt="Fisioterapeuta e massoterapeuta Otávio Marques" className="hero-image" />
           </div>
         </div>
         <a href="#sobre" className="scroll-cue" aria-label="Ir para a próxima seção"><span>CONHEÇA</span><ArrowDown size={18} /></a>
