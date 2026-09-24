@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
+// Como as fotos estão dentro da pasta public, o caminho é direto a partir da raiz /
 const logoAsset = "/logo.jpeg";
 const otavioAsset = "/otavio-marques.jpeg";
 const massoterapiaAsset = "/massoterapia-beneficios.jpeg";
@@ -215,7 +216,7 @@ function Index() {
 
       <section id="galeria" className="section gallery-section">
         <div className="section-inner">
-          <div className="section-heading gallery-heading"><div><p className="eyebrow light"><span /> EXPERIÊNCIA</p><h2>Cuidado em cada <em>detalhe.</em></h2></div><p>Técnicas e recursos applied em um ambiente preparado para sua recuperação.</p></div>
+          <div className="section-heading gallery-heading"><div><p className="eyebrow light"><span /> EXPERIÊNCIA</p><h2>Cuidado em cada <em>detalhe.</em></h2></div><p>Técnicas e recursos aplicados em um ambiente preparado para sua recuperação.</p></div>
           <div className="gallery-grid">
             {gallery.map((item, index) => <figure key={item.label} className={`gallery-item gallery-${index + 1}`}><img src={item.src} alt={item.alt} /><figcaption><span>0{index + 1}</span>{item.label}</figcaption></figure>)}
           </div>
